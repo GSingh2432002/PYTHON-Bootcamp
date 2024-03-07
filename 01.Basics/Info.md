@@ -12,11 +12,11 @@
 
 - Advance: Decorators, Generators, Iterators, MetaProgramming
 
-# Object ka type uske name pe 
+# Object ka type uske name pe nhi depend krta hai uske ref pe defend krta h.
 
 '''
 l1 = [1,2,3]
- l2 = l1
+ l2 = l1 
  l1
 [1, 2, 3]
  l2
