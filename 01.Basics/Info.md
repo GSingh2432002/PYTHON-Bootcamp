@@ -54,3 +54,5 @@ l1 = [1,2,3]
  h2
 [1, 2, 3]
 '''
+
+# List are mutable & Tuple are Immutable
