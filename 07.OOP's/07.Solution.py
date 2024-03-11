@@ -1,9 +1,12 @@
-# Demonstrate polymorphism by defining a method fuel_type in both Car and ElectricCar classes, but with different behaviours.
+# Add a static method to the Car class that returns a general description of a car.
 class Car:
+    total_car = 0
+    
     def __init__(self, brand, model):
         self.__brand = brand
         self.model = model
-        
+        Car.total_car += 1
+                
     def get_brand(self):
         return self.__brand + " !"
         
@@ -13,6 +16,10 @@ class Car:
     def fuel_type(self):
         return "Petrol or Diesel"
     
+    @staticmethod
+    def general_description():
+        return "Cars are means of transport"
+    
 class ElectricCar(Car):
     def __init__(self, brand, model, battery_size):
         super().__init__(brand, model)
@@ -21,8 +28,11 @@ class ElectricCar(Car):
     def fuel_type(self):
         return "Electric Charge"
 
-my_tesla = ElectricCar("Tesla", "Model S", "85kWh")
-print(my_tesla.fuel_type())
+# my_tesla = ElectricCar("Tesla", "Model S", "85kWh")
+# print(my_tesla.fuel_type())
 
-BMW = Car("BMW", "7 Series 740li")
-print(BMW.fuel_type())
+my_car = Car("BMW", "7 Series 740li")
+Car("BMW", "M5")
+
+# print(my_car.general_description())
+print(Car.general_description())

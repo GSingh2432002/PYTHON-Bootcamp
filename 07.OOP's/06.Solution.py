@@ -1,9 +1,12 @@
-# Demonstrate polymorphism by defining a method fuel_type in both Car and ElectricCar classes, but with different behaviours.
+# Add a class variable to Car that keeps track of the number of cars created.
 class Car:
+    total_car = 0
+    
     def __init__(self, brand, model):
         self.__brand = brand
         self.model = model
-        
+        Car.total_car += 1
+                
     def get_brand(self):
         return self.__brand + " !"
         
@@ -21,8 +24,9 @@ class ElectricCar(Car):
     def fuel_type(self):
         return "Electric Charge"
 
-my_tesla = ElectricCar("Tesla", "Model S", "85kWh")
-print(my_tesla.fuel_type())
+# my_tesla = ElectricCar("Tesla", "Model S", "85kWh")
+# print(my_tesla.fuel_type())
 
-BMW = Car("BMW", "7 Series 740li")
-print(BMW.fuel_type())
+Car("BMW", "7 Series 740li")
+Car("BMW", "M5")
+print(Car.total_car)
